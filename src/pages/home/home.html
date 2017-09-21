@@ -1,14 +1,18 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Eminem Playlists
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="card-background-page">
+    <ion-card *ngFor="let item of albumLists">
+        <img src="{{item.artworkUrl100}}" />
+        <div class="card-title"> {{item.trackName}} </div>
+        <div class="card-subtitle"> {{item.collectionName}} </div>
+        <!-- <ion-row> -->
+        <a ion-button full href="{{item.trackViewUrl}}" style="margin: 0rem 0rem;"> Price: {{item.collectionPrice}} </a>
+        <!-- </ion-row> -->
+    </ion-card>
 </ion-content>
